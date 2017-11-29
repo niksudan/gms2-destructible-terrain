@@ -19,8 +19,8 @@ sprite = sprite_create_from_surface(surface, 0, 0, surface_get_width(surface), s
 // We don't need to make this pixel-for-pixel accurate
 cellSize = 4;
 grid = ds_grid_create(
-	surface_get_width(surface div cellSize),
-	surface_get_height(surface div cellSize)
+	surface_get_width(surface) div cellSize,
+	surface_get_height(surface) div cellSize
 );
 
 // For each value in the grid, we set the value of 1
