@@ -7,6 +7,11 @@ var radius = 32;
 // 0 will mean that it is a free space
 ds_grid_set_disk(grid, mouse_x div cellSize, mouse_y div cellSize, radius div cellSize, 0);
 
+// Check for volatile surfaces, because sometimes they like to throw errors at us
+if (!surface_exists(surface)) {
+	surface = surface_create(room_width, room_height);
+}
+
 // Cut a circle shape out of the surface
 // We can achieve this by using blend modes, specifically the subtract mode
 surface_set_target(surface);
